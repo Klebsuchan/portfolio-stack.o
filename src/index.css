@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f2ff;
+  --color-neon-purple: #bc13fe;
+  --color-dark-bg: #020204;
+  --color-dark-surface: rgba(255, 255, 255, 0.03);
+  --color-dark-border: rgba(255, 255, 255, 0.1);
+  --font-sans: "Inter", "Space Grotesk", system-ui, sans-serif;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-dark-surface backdrop-blur-xl border border-dark-border;
+  }
+  
+  .glass-card {
+    @apply bg-dark-surface backdrop-blur-xl border border-dark-border rounded-3xl transition-all duration-300 hover:border-neon-purple/50;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue;
+  }
+  
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .glow-button:hover {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4), 0 0 40px rgba(188, 19, 254, 0.2);
+  }
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: #e2e8f0;
+}
