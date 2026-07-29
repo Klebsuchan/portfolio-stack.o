@@ -49,7 +49,7 @@ export function ProjectCalculator() {
           <div className="flex-1 space-y-8">
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-4">{t("Plataforma Principal", "Main Platform")}</label>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {[
                   { id: 'web', icon: Globe, label: 'Web / SaaS' },
                   { id: 'mobile', icon: Smartphone, label: 'Mobile App' },
@@ -58,14 +58,14 @@ export function ProjectCalculator() {
                   <button
                     key={item.id}
                     onClick={() => setPlatform(item.id)}
-                    className={`flex flex-col items-center justify-center p-4 rounded-xl border transition-all ${
+                    className={`flex flex-col items-center justify-center p-2 sm:p-4 rounded-xl border transition-all ${
                       platform === item.id 
                         ? 'bg-neon-blue/10 border-neon-blue text-neon-blue' 
                         : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'
                     }`}
                   >
-                    <item.icon size={24} className="mb-2" />
-                    <span className="text-xs font-bold text-center">{item.label}</span>
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2" />
+                    <span className="text-[10px] sm:text-xs font-bold text-center leading-tight">{item.label}</span>
                   </button>
                 ))}
               </div>

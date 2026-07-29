@@ -325,7 +325,7 @@ export function Portfolio() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -333,31 +333,32 @@ export function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group glass-card overflow-hidden flex flex-col md:flex-row cursor-pointer"
+                className="group glass-card overflow-hidden flex flex-col lg:flex-row cursor-pointer h-full"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="w-full md:w-1/3 min-h-[200px] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a0f] to-[#020204]">
+                <div className="w-full lg:w-1/3 min-h-[120px] md:min-h-[200px] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a0f] to-[#020204]">
                   <div className="absolute inset-0 bg-neon-blue/5 group-hover:bg-neon-blue/10 transition-colors duration-500" />
-                  <project.icon size={80} className="text-neon-blue opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
+                  <project.icon className="text-neon-blue opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 w-12 h-12 md:w-20 md:h-20" />
                 </div>
                 
-                <div className="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center relative bg-gradient-to-br from-white/[0.02] to-transparent">
+                <div className="w-full lg:w-2/3 p-4 md:p-8 lg:p-12 flex flex-col relative bg-gradient-to-br from-white/[0.02] to-transparent flex-1">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-neon-blue to-neon-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-neon-blue transition-colors">{project.title}</h3>
-                  <p className="text-gray-400 mb-8 text-base leading-relaxed max-w-3xl">{project.description}</p>
+                  <h3 className="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-white group-hover:text-neon-blue transition-colors line-clamp-2 lg:line-clamp-none">{project.title}</h3>
+                  <p className="text-gray-400 mb-4 md:mb-8 text-[11px] md:text-base leading-relaxed max-w-3xl line-clamp-3 lg:line-clamp-none">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="px-3 py-1.5 text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400">
+                  <div className="flex flex-wrap gap-1.5 md:gap-3 mb-4 md:mb-8">
+                    {project.tags.slice(0, 3).map((tag, i) => (
+                      <span key={i} className="px-2 py-1 md:px-3 md:py-1.5 text-[9px] md:text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400 whitespace-nowrap">
                         {tag}
                       </span>
                     ))}
                   </div>
                   
-                  <button className="flex items-center gap-2 text-white text-sm font-bold w-fit group/btn group-hover:text-neon-purple transition-colors">
-                    {project.linkText}
-                    <ArrowUpRight className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" size={16} />
+                  <button className="flex items-center gap-1.5 md:gap-2 text-white text-[11px] md:text-sm font-bold w-fit group/btn group-hover:text-neon-purple transition-colors mt-auto">
+                    <span className="hidden sm:inline">{project.linkText}</span>
+                    <span className="sm:hidden">{t("Ver", "View")}</span>
+                    <ArrowUpRight className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform w-3.5 h-3.5 md:w-4 md:h-4" />
                   </button>
                 </div>
               </motion.div>
