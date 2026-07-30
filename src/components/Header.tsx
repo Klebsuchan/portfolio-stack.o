@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Globe, Menu, X, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import stackLogo from '../assets/images/stacklogo.png';
+
 export function Header() {
   const { language, toggleLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +20,7 @@ export function Header() {
     <>
       <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 md:px-12 lg:px-16 py-6 z-50">
         <div className="flex items-center space-x-2">
-          <img src="/stacklogo.png" alt="Stack.O Logo" className="h-12 md:h-20 object-contain" />
+          <img src={stackLogo} alt="Stack.O Logo" className="h-12 md:h-20 object-contain" />
         </div>
 
         {/* Desktop Menu */}
