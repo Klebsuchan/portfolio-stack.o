@@ -2,7 +2,6 @@ import { MessageCircle, Github, Linkedin, Instagram, ArrowRight, ShieldCheck, Ma
 import { motion } from 'motion/react';
 import React, { useState } from 'react';
 import { InfoModal } from './InfoModal';
-import stackLogo from '../assets/images/stacklogo.png';
 
 const modalContents: Record<string, { title: string; content: React.ReactNode }> = {
   'sobre': {
@@ -136,7 +135,7 @@ export function Footer() {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16 relative z-10">
           <div className="md:col-span-4 lg:col-span-4 flex flex-col">
-            <img src={stackLogo} alt="Stack.O Logo" className="h-16 md:h-20 w-auto mb-6 object-contain object-left" />
+            <img src="/stacklogo.png" alt="Stack.O Logo" className="h-16 md:h-20 w-auto mb-6 object-contain object-left" />
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               Engenharia de software de alto nível. Transformamos ideias complexas em produtos digitais escaláveis, rápidos e visualmente impressionantes. Focados em excelência, performance e entrega de valor real para negócios ambiciosos.
             </p>

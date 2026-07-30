@@ -1,9 +1,5 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '../contexts/LanguageContext';
-import braianImg from '../assets/images/braian.png';
-import jhonatasImg from '../assets/images/jhonatas.jpeg';
-import jeanImg from '../assets/images/jean.jpeg';
-import lorenzoImg from '../assets/images/lorenzo.jpeg';
 
 export function AboutUs() {
   const { t } = useLanguage();
@@ -12,7 +8,7 @@ export function AboutUs() {
     {
       name: "Braian Kleber",
       role: "Fullstack & Founder",
-      image: braianImg,
+      image: "/braian.png",
       bio: t(
         "Desenvolvedor Fullstack e Fundador do projeto Stack.O. Iniciando sua jornada em 2019, Braian rapidamente se destacou por sua capacidade única de unir a complexidade lógica do back-end com a sensibilidade estética do web design premium. Como líder visionário e idealizador da Stack.O, ele orquestra todas as fases do desenvolvimento, garantindo que cada linha de código contribua para uma experiência de usuário absolutamente fluida, interativa e de altíssima performance. Sua obsessão pelos detalhes não apenas resolve problemas técnicos, mas eleva cada projeto a um verdadeiro estado de arte digital, guiando a equipe rumo à excelência contínua.",
         "Fullstack Developer and Founder of the Stack.O project. Starting his journey in 2019, Braian quickly stood out for his unique ability to unite the logical complexity of the back-end with the aesthetic sensitivity of premium web design. As a visionary leader and creator of Stack.O, he orchestrates all phases of development, ensuring that every line of code contributes to an absolutely fluid, interactive, and high-performance user experience. His obsession with detail not only solves technical problems, but elevates each project to a true state of digital art, guiding the team towards continuous excellence."
@@ -21,7 +17,7 @@ export function AboutUs() {
     {
       name: "Jhonatas Leovaldo",
       role: "Backend Specialist",
-      image: jhonatasImg,
+      image: "/jhonatas.jpeg",
       bio: t(
         "Especialista em Backend. Tudo começou em 2016, movido pela curiosidade de entender como os sistemas funcionavam por trás das cortinas. Desde então, mergulhou profundamente na arquitetura de software, construindo APIs robustas, microsserviços escaláveis e lidando com altos volumes de dados. Sua paixão é garantir que os alicerces de cada aplicação sejam inabaláveis e otimizados para o futuro.",
         "Backend Specialist. It all started in 2016, driven by a curiosity to understand how systems worked behind the scenes. Since then, he has dove deep into software architecture, building robust APIs, scalable microservices, and handling high data volumes. His passion is ensuring the foundation of every application is unshakable and future-proof."
@@ -30,7 +26,7 @@ export function AboutUs() {
     {
       name: "Jean Bazzi",
       role: "Development & Networks Specialist",
-      image: jeanImg,
+      image: "/jean.jpeg",
       bio: t(
         "Especialista em desenvolvimento e redes de computadores, atuando desde 2001. Com vasta experiência em PHP, DELPHI, PYTHON e robótica, traz uma visão técnica profunda capaz de integrar sistemas complexos de hardware e software com maestria e extrema precisão.",
         "Specialist in development and computer networks since 2001. With vast experience in PHP, DELPHI, PYTHON, and robotics, he brings a deep technical vision, able to masterfully integrate complex hardware and software systems with extreme precision."
@@ -39,7 +35,7 @@ export function AboutUs() {
     {
       name: "Lorenzo Orssato",
       role: "Systems Analysis & Dev",
-      image: lorenzoImg,
+      image: "/lorenzo.jpeg",
       bio: t(
         "Especialista em Análise e Desenvolvimento de Sistemas. Destaca-se por sua capacidade de compreender a fundo os processos de negócio e traduzir requisitos em arquiteturas de software otimizadas, focando sempre na melhoria contínua.",
         "Specialist in Systems Analysis and Development. Stands out for his ability to deeply understand business processes and translate requirements into optimized software architectures, always focusing on continuous improvement."
