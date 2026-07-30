@@ -344,21 +344,21 @@ export function Portfolio() {
                 <div className="w-full lg:w-2/3 p-4 md:p-8 lg:p-12 flex flex-col relative bg-gradient-to-br from-white/[0.02] to-transparent flex-1">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-neon-blue to-neon-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  <h3 className="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-white group-hover:text-neon-blue transition-colors line-clamp-2 lg:line-clamp-none">{project.title}</h3>
-                  <p className="text-gray-400 mb-4 md:mb-8 text-[11px] md:text-base leading-relaxed max-w-3xl line-clamp-3 lg:line-clamp-none">{project.description}</p>
+                  <h3 className="text-sm sm:text-lg md:text-3xl font-bold mb-1 md:mb-4 text-white group-hover:text-neon-blue transition-colors line-clamp-2 lg:line-clamp-none">{project.title}</h3>
+                  <p className="text-gray-400 mb-2 md:mb-8 text-[10px] sm:text-xs md:text-base leading-relaxed max-w-3xl line-clamp-3 lg:line-clamp-none">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-1.5 md:gap-3 mb-4 md:mb-8">
+                  <div className="flex flex-wrap gap-1 md:gap-3 mb-2 md:mb-8">
                     {project.tags.slice(0, 3).map((tag, i) => (
-                      <span key={i} className="px-2 py-1 md:px-3 md:py-1.5 text-[9px] md:text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400 whitespace-nowrap">
+                      <span key={i} className="px-1.5 py-0.5 md:px-3 md:py-1.5 text-[8px] sm:text-[9px] md:text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400 whitespace-nowrap">
                         {tag}
                       </span>
                     ))}
                   </div>
                   
-                  <button className="flex items-center gap-1.5 md:gap-2 text-white text-[11px] md:text-sm font-bold w-fit group/btn group-hover:text-neon-purple transition-colors mt-auto">
+                  <button className="flex items-center gap-1 md:gap-2 text-white text-[10px] sm:text-[11px] md:text-sm font-bold w-fit group/btn group-hover:text-neon-purple transition-colors mt-auto">
                     <span className="hidden sm:inline">{project.linkText}</span>
                     <span className="sm:hidden">{t("Ver", "View")}</span>
-                    <ArrowUpRight className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform w-3.5 h-3.5 md:w-4 md:h-4" />
+                    <ArrowUpRight className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform w-3 h-3 md:w-4 md:h-4" />
                   </button>
                 </div>
               </motion.div>
