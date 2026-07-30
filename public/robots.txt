@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stacko.com.br/sitemap.xml
