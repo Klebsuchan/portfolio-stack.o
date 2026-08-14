@@ -1,8 +1,9 @@
-import { MessageCircle, Github, Linkedin, Instagram, ArrowRight, ShieldCheck, MapPin, Mail, Phone, Twitter } from 'lucide-react';
+import { Facebook, MessageCircle, Github, Linkedin, Instagram, ArrowRight, ShieldCheck, MapPin, Mail, Phone, Twitter } from 'lucide-react';
 import { motion } from 'motion/react';
 import React, { useState } from 'react';
 import { InfoModal } from './InfoModal';
-import stackLogo from '../assets/images/stacklogo.png';
+import stackLogo from '../assets/images/logostacko.png';
+import RubikParticles from './originkit/ui/cube';
 
 const modalContents: Record<string, { title: string; content: React.ReactNode }> = {
   'sobre': {
@@ -132,7 +133,12 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 border-t border-white/5 bg-[#020204] pt-20 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-neon-purple/50 to-transparent" />
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none md:pointer-events-auto flex items-center justify-end -right-20">
+        <div className="w-[600px] h-[600px]">
+          <RubikParticles color="#bc13fe" />
+        </div>
+      </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-zinc-400/50 to-transparent" />
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16 relative z-10">
           <div className="md:col-span-4 lg:col-span-4 flex flex-col">
@@ -141,20 +147,17 @@ export function Footer() {
               Engenharia de software de alto nível. Transformamos ideias complexas em produtos digitais escaláveis, rápidos e visualmente impressionantes. Focados em excelência, performance e entrega de valor real para negócios ambiciosos.
             </p>
             <div className="flex flex-col gap-2 mb-8 text-sm text-gray-500">
-              <span className="flex items-center gap-2"><MapPin size={14} className="text-neon-blue" /> Passo Fundo, RS - Brasil</span>
+              <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Passo Fundo, RS - Brasil</span>
             </div>
             <div className="flex gap-4 mt-auto">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#0A66C2] hover:bg-[#0A66C2]/10 transition-all">
-                <Linkedin size={18} />
-              </a>
-              <a href="https://www.instagram.com/stack.odev?igsh=cWR5MDNsM3B3MzZv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-neon-purple hover:bg-neon-purple/10 transition-all">
+              <a href="https://www.instagram.com/stack.odev?igsh=cWR5MDNsM3B3MzZv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-neon-purple hover:border-neon-purple hover:bg-neon-purple/10 transition-all">
                 <Instagram size={18} />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/40 transition-all">
-                <Github size={18} />
+              <a href="https://wa.me/5554991064604" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-green-500 hover:border-green-500 hover:bg-green-500/10 transition-all">
+                <MessageCircle size={18} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-blue-400 hover:bg-blue-400/10 transition-all">
-                <Twitter size={18} />
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#1877F2] hover:border-[#1877F2] hover:bg-[#1877F2]/10 transition-all">
+                <Facebook size={18} />
               </a>
             </div>
           </div>
@@ -173,11 +176,11 @@ export function Footer() {
             <div className="md:text-left">
               <h4 className="text-white font-bold mb-4">Serviços</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => setActiveModal('devweb')} className="text-gray-400 hover:text-neon-purple text-sm transition-colors">Desenvolvimento Web</button></li>
-                <li><button onClick={() => setActiveModal('saas')} className="text-gray-400 hover:text-neon-purple text-sm transition-colors">Sistemas SaaS</button></li>
-                <li><button onClick={() => setActiveModal('mobile')} className="text-gray-400 hover:text-neon-purple text-sm transition-colors">Apps Mobile Nativos</button></li>
-                <li><button onClick={() => setActiveModal('refatoracao')} className="text-gray-400 hover:text-neon-purple text-sm transition-colors">Refatoração de Legado</button></li>
-                <li><button className="text-gray-400 hover:text-neon-purple text-sm transition-colors">Cloud & DevOps</button></li>
+                <li><button onClick={() => setActiveModal('devweb')} className="text-gray-400 hover:text-neon-blue text-sm transition-colors">Desenvolvimento Web</button></li>
+                <li><button onClick={() => setActiveModal('saas')} className="text-gray-400 hover:text-neon-blue text-sm transition-colors">Sistemas SaaS</button></li>
+                <li><button onClick={() => setActiveModal('mobile')} className="text-gray-400 hover:text-neon-blue text-sm transition-colors">Apps Mobile Nativos</button></li>
+                <li><button onClick={() => setActiveModal('refatoracao')} className="text-gray-400 hover:text-neon-blue text-sm transition-colors">Refatoração de Legado</button></li>
+                <li><button className="text-gray-400 hover:text-neon-blue text-sm transition-colors">Cloud & DevOps</button></li>
               </ul>
             </div>
 
@@ -205,17 +208,17 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="text-neon-blue" size={16} />
+            <ShieldCheck className="text-white" size={16} />
             <span className="text-gray-500 text-xs">© {new Date().getFullYear()} Stack.O. Todos os direitos reservados.</span>
           </div>
           
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            <button onClick={() => setActiveModal('privacidade')} className="text-gray-500 hover:text-white text-xs transition-colors">Política de Privacidade</button>
-            <button onClick={() => setActiveModal('termos')} className="text-gray-500 hover:text-white text-xs transition-colors">Termos de Uso</button>
+            <button onClick={() => setActiveModal('privacidade')} className="text-gray-500 hover:text-neon-purple text-xs transition-colors">Política de Privacidade</button>
+            <button onClick={() => setActiveModal('termos')} className="text-gray-500 hover:text-neon-purple text-xs transition-colors">Termos de Uso</button>
             <button onClick={() => {
               localStorage.removeItem('stacko-cookie-consent');
               window.location.reload();
-            }} className="text-gray-500 hover:text-white text-xs transition-colors">Preferências de Cookies</button>
+            }} className="text-gray-500 hover:text-neon-purple text-xs transition-colors">Preferências de Cookies</button>
           </div>
         </div>
       </div>
@@ -227,7 +230,7 @@ export function Footer() {
         rel="noopener noreferrer"
         className="fixed bottom-6 left-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all z-50 group"
       >
-        <div className="absolute inset-0 rounded-full border-2 border-white/20 scale-100 group-hover:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
+        <div className="absolute inset-0 rounded-full border-2 border-white/10 scale-100 group-hover:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
         <MessageCircle className="w-7 h-7 text-white" />
       </a>
 

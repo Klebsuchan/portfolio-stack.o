@@ -59,8 +59,8 @@ function MetricsChart({ data }: { data: any[] }) {
       .attr('x2', '0%')
       .attr('y2', '100%');
       
-    gradient.append('stop').attr('offset', '0%').attr('stop-color', '#00f2ff');
-    gradient.append('stop').attr('offset', '100%').attr('stop-color', '#bc13fe');
+    gradient.append('stop').attr('offset', '0%').attr('stop-color', '#ffffff');
+    gradient.append('stop').attr('offset', '100%').attr('stop-color', '#a1a1aa');
 
     svg.selectAll('rect')
       .data(data)
@@ -125,7 +125,7 @@ function ArchitectureDiagram({ nodes, links }: { nodes: any[], links: any[] }) {
     node.append('circle')
       .attr('r', 25)
       .attr('fill', 'rgba(2, 2, 4, 0.9)')
-      .attr('stroke', (d: any) => d.type === 'db' ? '#bc13fe' : '#00f2ff')
+      .attr('stroke', (d: any) => d.type === 'db' ? '#a1a1aa' : '#ffffff')
       .attr('stroke-width', 3);
 
     node.append('text')
@@ -144,7 +144,7 @@ function ArchitectureDiagram({ nodes, links }: { nodes: any[], links: any[] }) {
       .attr('x', 0)
       .attr('y', 4)
       .attr('text-anchor', 'middle')
-      .attr('fill', (d: any) => d.type === 'db' ? '#bc13fe' : '#00f2ff')
+      .attr('fill', (d: any) => d.type === 'db' ? '#a1a1aa' : '#ffffff')
       .style('font-size', '10px')
       .style('font-family', 'var(--font-mono)');
 
@@ -191,7 +191,7 @@ export function CaseStudyModal({ project, isOpen, onClose }: { project: any, isO
             <div className="absolute top-0 right-0 p-6 z-30">
               <button 
                 onClick={onClose}
-                className="w-10 h-10 bg-black/40 hover:bg-neon-purple/20 border border-white/10 hover:border-neon-purple rounded-full flex items-center justify-center text-white transition-all backdrop-blur-md"
+                className="w-10 h-10 bg-black/40 hover:bg-zinc-400/20 border border-white/10 hover:border-zinc-400 rounded-full flex items-center justify-center text-white transition-all backdrop-blur-md"
               >
                 <X size={20} />
               </button>
@@ -202,11 +202,11 @@ export function CaseStudyModal({ project, isOpen, onClose }: { project: any, isO
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent z-10" />
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                  {project.icon && <project.icon size={200} className="text-neon-blue blur-[2px]" />}
+                  {project.icon && <project.icon size={200} className="text-white blur-[2px]" />}
                 </div>
 
                 <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                  <div className="inline-block px-3 py-1 bg-neon-blue/20 border border-neon-blue/30 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-4 w-fit backdrop-blur-md">
+                  <div className="inline-block px-3 py-1 bg-white/20 border border-white/30 rounded-full text-[10px] text-white font-bold tracking-[0.2em] uppercase mb-4 w-fit backdrop-blur-md">
                     {t('Estudo de Caso', 'Case Study')}
                   </div>
                   <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">{project.title}</h2>
@@ -224,14 +224,14 @@ export function CaseStudyModal({ project, isOpen, onClose }: { project: any, isO
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                   <div className="lg:col-span-1">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <ExternalLink className="text-neon-blue" size={20} /> {t('O Desafio & Solução', 'The Challenge & Solution')}
+                      <ExternalLink className="text-white" size={20} /> {t('O Desafio & Solução', 'The Challenge & Solution')}
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-8">
                       {project.description} {t(' Este projeto exigiu uma reformulação completa da arquitetura base para suportar alta escalabilidade e concorrência, focando em performance, zero-downtime e segurança em nível corporativo.', ' This project required a complete overhaul of the core architecture to support high scalability and concurrency, focusing on performance, zero-downtime, and enterprise-grade security.')}
                     </p>
                     
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <BarChart3 className="text-neon-purple" size={20} /> {t('Métricas de Sucesso', 'Success Metrics')}
+                      <BarChart3 className="text-zinc-400" size={20} /> {t('Métricas de Sucesso', 'Success Metrics')}
                     </h3>
                     <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mb-4 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
                       <MetricsChart data={project.metrics} />
@@ -240,23 +240,23 @@ export function CaseStudyModal({ project, isOpen, onClose }: { project: any, isO
 
                   <div className="lg:col-span-2">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <Database className="text-neon-blue" size={20} /> {t('Arquitetura (ERD Dinâmico)', 'Architecture (Dynamic ERD)')}
+                      <Database className="text-white" size={20} /> {t('Arquitetura (ERD Dinâmico)', 'Architecture (Dynamic ERD)')}
                     </h3>
                     <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mb-8 relative overflow-hidden shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
-                      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-neon-purple/5 blur-[100px] pointer-events-none" />
-                      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] pointer-events-none" />
+                      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-zinc-400/5 blur-[100px] pointer-events-none" />
+                      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 blur-[100px] pointer-events-none" />
                       <ArchitectureDiagram nodes={project.architecture.nodes} links={project.architecture.links} />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="bg-gradient-to-br from-neon-blue/10 to-transparent border border-neon-blue/20 rounded-xl p-6 relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-neon-blue/20 blur-xl group-hover:bg-neon-blue/40 transition-colors" />
-                        <div className="text-3xl md:text-5xl font-black text-neon-blue mb-2">+{project.metrics[0]?.value || 400}%</div>
+                      <div className="bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-xl p-6 relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-white/20 blur-xl group-hover:bg-white/40 transition-colors" />
+                        <div className="text-3xl md:text-5xl font-black text-white mb-2">+{project.metrics[0]?.value || 400}%</div>
                         <div className="text-xs text-gray-400 uppercase tracking-wider font-bold">{t('Aumento em ', 'Increase in ')}{project.metrics[0]?.label || t('Performance', 'Performance')}</div>
                       </div>
-                      <div className="bg-gradient-to-br from-neon-purple/10 to-transparent border border-neon-purple/20 rounded-xl p-6 relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-neon-purple/20 blur-xl group-hover:bg-neon-purple/40 transition-colors" />
-                        <div className="text-3xl md:text-5xl font-black text-neon-purple mb-2">99.99%</div>
+                      <div className="bg-gradient-to-br from-zinc-400/10 to-transparent border border-white/10 rounded-xl p-6 relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-zinc-400/20 blur-xl group-hover:bg-zinc-400/40 transition-colors" />
+                        <div className="text-3xl md:text-5xl font-black text-zinc-400 mb-2">99.99%</div>
                         <div className="text-xs text-gray-400 uppercase tracking-wider font-bold">{t('Uptime Garantido', 'Guaranteed Uptime')}</div>
                       </div>
                     </div>

@@ -48,10 +48,10 @@ export function Pricing() {
     <section className="py-24 px-6 md:px-12 lg:px-16 relative z-10 border-t border-white/5 bg-[#020204]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-neon-blue/10 border border-neon-blue/20 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-4 w-fit">
+          <div className="inline-block px-3 py-1 bg-neon-purple/20 border border-neon-blue/20 rounded-full text-[10px] text-white font-bold tracking-[0.2em] uppercase mb-4 w-fit">
             {t("Pacotes de Serviço", "Service Packages")}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white">
             {t("Modelos de ", "Models of ")}<span className="text-gradient">{t("Engajamento", "Engagement")}</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
@@ -120,7 +120,7 @@ export function Pricing() {
                 <a href="#contact" className={`mt-auto w-full py-3 rounded-xl flex items-center justify-center gap-2 font-bold text-sm transition-all ${
                   plan.popular 
                     ? 'bg-white text-black hover:bg-gray-200' 
-                    : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
+                    : 'bg-neon-purple/20 text-white border border-neon-blue/20 hover:bg-neon-purple/20'
                 }`}>
                   {t("Solicitar Orçamento", "Request Quote")}
                   <ArrowRight size={16} />

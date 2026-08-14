@@ -17,8 +17,8 @@ export function PlatformVisualization() {
         {/* Sidebar */}
         <div className="col-span-1 flex flex-col gap-3 border-r border-white/5 pr-4">
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-5 h-5 rounded bg-neon-blue/20 border border-neon-blue/30" />
-            <div className="h-2 flex-1 rounded bg-white/10" />
+            <div className="w-5 h-5 rounded bg-white/20 border border-white/30" />
+            <div className="h-2 flex-1 rounded bg-white/5" />
           </div>
           {[...Array(4)].map((_, i) => (
             <motion.div 
@@ -26,7 +26,7 @@ export function PlatformVisualization() {
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "100%", opacity: 1 }}
               transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
-              className={`h-1.5 rounded-full ${i === 0 ? 'bg-neon-blue/40' : 'bg-white/10'}`}
+              className={`h-1.5 rounded-full ${i === 0 ? 'bg-white/40' : 'bg-white/5'}`}
             />
           ))}
           
@@ -35,10 +35,10 @@ export function PlatformVisualization() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.8 }}
-              className="w-10 h-10 rounded-full border border-neon-blue/30 bg-neon-blue/10 flex items-center justify-center relative"
+              className="w-10 h-10 rounded-full border border-white/30 bg-white/5 flex items-center justify-center relative"
              >
-                <div className="w-full h-full rounded-full bg-neon-blue absolute animate-ping opacity-20" />
-                <div className="w-3 h-3 rounded-full bg-neon-blue shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
+                <div className="w-full h-full rounded-full bg-white absolute animate-ping opacity-20" />
+                <div className="w-3 h-3 rounded-full bg-white shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
              </motion.div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export function PlatformVisualization() {
                      initial={{ width: "20%" }}
                      animate={{ width: i === 0 ? "85%" : "60%" }}
                      transition={{ delay: 1, duration: 1.5, ease: "easeOut" }}
-                     className={`h-2 rounded-full ${i === 0 ? 'bg-neon-purple shadow-[0_0_8px_rgba(188,19,254,0.5)]' : 'bg-neon-blue shadow-[0_0_8px_rgba(56,189,248,0.5)]'}`}
+                     className={`h-2 rounded-full ${i === 0 ? 'bg-zinc-400 shadow-[0_0_8px_rgba(188,19,254,0.5)]' : 'bg-white shadow-[0_0_8px_rgba(56,189,248,0.5)]'}`}
                    />
                  </div>
               </motion.div>
@@ -83,14 +83,14 @@ export function PlatformVisualization() {
                   stiffness: 100,
                   damping: 15
                 }}
-                className="flex-1 bg-gradient-to-t from-neon-purple/20 to-neon-blue/60 rounded-t-sm relative z-10 hover:from-neon-purple/40 hover:to-neon-blue/80 transition-colors cursor-pointer"
+                className="flex-1 bg-gradient-to-t from-zinc-400/20 to-white/60 rounded-t-sm relative z-10 hover:from-zinc-400/40 hover:to-white/80 transition-colors cursor-pointer"
               />
             ))}
           </div>
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-neon-blue/10 blur-[50px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white/5 blur-[50px] pointer-events-none rounded-full" />
       </div>
     </div>
   );

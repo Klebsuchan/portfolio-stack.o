@@ -32,16 +32,16 @@ export function Process() {
     <section className="py-24 px-6 md:px-12 lg:px-16 relative z-10 bg-black/40 border-y border-white/5">
       <div className="w-full">
         <div className="text-center mb-20">
-          <div className="inline-block px-3 py-1 bg-neon-purple/10 border border-neon-purple/20 rounded-full text-[10px] text-neon-purple font-bold tracking-[0.2em] uppercase mb-4 w-fit">
+          <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-neon-purple font-bold tracking-[0.2em] uppercase mb-4 w-fit">
             {t('Workflow', 'Workflow')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">{t('Nossa ', 'Our ')}<span className="text-gradient">{t('Engenharia', 'Engineering')}</span></h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white">{t('Nossa ', 'Our ')}<span className="text-gradient">{t('Engenharia', 'Engineering')}</span></h2>
           <p className="text-gray-400 max-w-2xl mx-auto">{t('Um processo metodológico focado em previsibilidade e qualidade de software.', 'A methodological process focused on predictability and software quality.')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-neon-blue/20 via-neon-purple/50 to-neon-blue/20" />
+          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-white/20 via-zinc-400/50 to-white/20" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -52,8 +52,8 @@ export function Process() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative flex flex-col items-center text-center group"
             >
-              <div className="w-24 h-24 rounded-full bg-[#020204] border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-neon-purple/50 group-hover:shadow-[0_0_30px_rgba(188,19,254,0.3)] transition-all duration-500">
-                <div className="absolute inset-2 rounded-full border border-dashed border-white/20 group-hover:animate-[spin_10s_linear_infinite]" />
+              <div className="w-24 h-24 rounded-full bg-[#020204] border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-zinc-400/50 group-hover:shadow-[0_0_30px_rgba(188,19,254,0.3)] transition-all duration-500">
+                <div className="absolute inset-2 rounded-full border border-dashed border-white/10 group-hover:animate-[spin_10s_linear_infinite]" />
                 <div className="group-hover:scale-110 transition-transform duration-300">
                   {step.icon}
                 </div>
@@ -73,10 +73,10 @@ export function Process() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-24 p-8 md:p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-[#0a0a0f] to-[#020204] relative overflow-hidden flex flex-col md:flex-row items-center md:items-start gap-8 shadow-2xl group"
         >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue opacity-80" />
-          <div className="absolute -inset-24 bg-neon-blue/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-neon-blue/10 transition-all" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white via-zinc-400 to-white opacity-80" />
+          <div className="absolute -inset-24 bg-white/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-white/5 transition-all" />
           
-          <div className="w-20 h-20 rounded-full bg-neon-blue/10 flex items-center justify-center shrink-0 border border-neon-blue/20 group-hover:scale-110 transition-transform duration-500">
+          <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-500">
             <FileSignature className="text-neon-blue" size={36} />
           </div>
           <div className="text-center md:text-left relative z-10">

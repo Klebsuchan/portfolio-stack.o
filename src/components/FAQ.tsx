@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 function AccordionItem({ question, answer, isOpen, onClick }: { key?: React.Key; question: string, answer: string, isOpen: boolean, onClick: () => void }) {
   return (
-    <div className={`border rounded-2xl mb-4 overflow-hidden bg-white/[0.02] backdrop-blur-md transition-colors ${isOpen ? 'border-neon-purple/50 bg-white/[0.04]' : 'border-white/10 hover:border-white/20 hover:bg-white/[0.04]'}`}>
+    <div className={`border rounded-2xl mb-4 overflow-hidden bg-white/[0.02] backdrop-blur-md transition-colors ${isOpen ? 'border-zinc-400/50 bg-white/[0.04]' : 'border-white/10 hover:border-white/10 hover:bg-white/[0.04]'}`}>
       <button
         className="w-full flex items-center justify-between p-6 text-left"
         onClick={onClick}
@@ -14,7 +14,7 @@ function AccordionItem({ question, answer, isOpen, onClick }: { key?: React.Key;
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center border ${isOpen ? 'border-neon-purple text-neon-purple' : 'border-white/20 text-white'} transition-colors`}
+          className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center border ${isOpen ? 'border-zinc-400 text-zinc-400' : 'border-white/10 text-white'} transition-colors`}
         >
           <ChevronDown size={16} />
         </motion.div>
@@ -79,10 +79,10 @@ export function FAQ() {
     <section className="py-24 px-6 md:px-12 lg:px-16 relative z-10 border-t border-white/5">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-neon-blue/10 border border-neon-blue/20 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-4 w-fit">
+          <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-white font-bold tracking-[0.2em] uppercase mb-4 w-fit">
             {t('Dúvidas Frequentes', 'Frequently Asked Questions')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white">
             {t('O que você precisa ', 'What you need to ')}<span className="text-gradient">{t('saber', 'know')}</span>
           </h2>
         </div>

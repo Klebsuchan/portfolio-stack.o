@@ -1,306 +1,473 @@
 import { motion } from 'motion/react';
-import { ArrowUpRight, Activity, Bot, ShieldAlert, ShoppingCart, Gamepad2, LayoutTemplate, Store, Pizza, Car, Dices, Rocket, Landmark, School, Heart } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CaseStudyModal } from './CaseStudyModal';
 
 const getProjects = (t: any) => [
   {
-    title: "StellarCare",
-    description: t("Aplicativo offline-first avançado para Sistematização da Assistência de Enfermagem (SAE) e Prontuário Eletrônico do Paciente (PEP). Focado em monitoramento clínico em tempo real.", "Advanced offline-first application for Systematization of Nursing Care (SNC) and Electronic Patient Record (EPR). Focused on real-time clinical monitoring."),
-    tags: ["React", "TypeScript", "Offline-First", "HealthTech"],
-    icon: Activity,
+    title: "Nexalytics Enterprise ERP",
+    description: t("Plataforma abrangente de gestão de recursos corporativos. Integração em tempo real de cadeias de suprimentos, módulos financeiros e análises preditivas baseadas em IA para corporações globais.", "Comprehensive enterprise resource management platform. Real-time integration of supply chains, financial modules, and AI-driven predictive analytics for global corporations."),
+    tags: ["Microservices", "React", "Node.js", "AI Analytics"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Arquitetura", "View Architecture"),
     metrics: [
-      { label: t("Precisão Clínica", "Clinical Accuracy"), value: 99.9 },
-      { label: "Uptime Offline", value: 100 },
-      { label: t("Agilidade", "Agility"), value: 85 },
+      { label: t("Proc. de Dados", "Data Proc."), value: 99.9 },
+      { label: "Uptime", value: 99.99 },
+      { label: t("Eficiência", "Efficiency"), value: 45 },
       { label: t("Segurança", "Security"), value: 100 }
     ],
     architecture: {
       nodes: [
-        { id: "client", label: "React Client", type: "app" },
-        { id: "sync", label: "Sync Engine", type: "app" },
-        { id: "db", label: "Local Database", type: "db" },
-        { id: "api", label: "Cloud API", type: "app" }
+        { id: "client", label: "Enterprise UI", type: "app" },
+        { id: "gateway", label: "API Gateway", type: "app" },
+        { id: "db", label: "Distributed SQL", type: "db" },
+        { id: "ai", label: "ML Engine", type: "app" }
       ],
       links: [
-        { source: "client", target: "db" },
-        { source: "client", target: "sync" },
-        { source: "sync", target: "api" }
+        { source: "client", target: "gateway" },
+        { source: "gateway", target: "db" },
+        { source: "gateway", target: "ai" }
       ]
     }
   },
   {
-    title: "HistoryAI",
-    description: t("Chatbot inteligente especializado em história contrafactual ('E se...?'). Integra IA para gerar PDFs e apresentações de slides dinamicamente.", "Intelligent chatbot specialized in counterfactual history ('What if...?'). Integrates AI to dynamically generate PDFs and slide presentations."),
-    tags: ["React", "TypeScript", "AI", "PDF Generation"],
-    icon: Bot,
+    title: "Aegis Core Banking",
+    description: t("Sistema bancário central de alta frequência com rigorosos padrões de conformidade (PCI-DSS) e segurança. Processamento transacional distribuído para instituições financeiras tier-1.", "High-frequency core banking system with strict compliance (PCI-DSS) and security standards. Distributed transactional processing for tier-1 financial institutions."),
+    tags: ["FinTech", "TypeScript", "Kafka", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: "Geração (s)", value: 2 },
-      { label: "Acurácia", value: 95 },
-      { label: "PDFs/min", value: 30 },
-      { label: t("Retenção", "Retention"), value: 80 }
+      { label: "TPS", value: 15000 },
+      { label: "Latência (ms)", value: 5 },
+      { label: "Conformidade", value: 100 },
+      { label: t("Auditoria", "Audit"), value: 100 }
     ],
     architecture: {
       nodes: [
-        { id: "ui", label: "Chat UI", type: "app" },
-        { id: "ai", label: "AI Engine", type: "app" },
-        { id: "pdf", label: "PDF Generator", type: "app" },
-        { id: "storage", label: "Cloud Storage", type: "db" }
+        { id: "api", label: "GraphQL API", type: "app" },
+        { id: "kafka", label: "Event Stream", type: "app" },
+        { id: "ledger", label: "Immutable Ledger", type: "db" },
+        { id: "auth", label: "Identity IAM", type: "app" }
       ],
       links: [
-        { source: "ui", target: "ai" },
-        { source: "ai", target: "pdf" },
-        { source: "pdf", target: "storage" },
-        { source: "storage", target: "ui" }
+        { source: "api", target: "auth" },
+        { source: "api", target: "kafka" },
+        { source: "kafka", target: "ledger" }
       ]
     }
   },
   {
-    title: "FireSafe Hub",
-    description: t("Painel centralizado de ocorrências e gestão de prevenção de incidentes. Desenvolvido para gerenciamento em tempo real com alta confiabilidade.", "Centralized incident dashboard and incident prevention management. Developed for real-time management with high reliability."),
-    tags: ["React", "TypeScript", "Gestão", "Dashboards"],
-    icon: ShieldAlert,
+    title: "OmniCRM Intelligence",
+    description: t("CRM alimentado por IA para equipes de vendas B2B. Automação de pontuação de leads, previsões de churn e suporte omnichannel em uma interface de alta performance.", "AI-powered CRM for B2B sales teams. Lead scoring automation, churn predictions, and omnichannel support in a high-performance interface."),
+    tags: ["React", "AI", "WebSocket", "CRM"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: "T. Resposta", value: 1.2 },
-      { label: "Ocorrências/s", value: 50 },
-      { label: "Disponibilidade", value: 99.99 },
-      { label: "Painéis", value: 15 }
+      { label: t("Conversão", "Conversion"), value: 35 },
+      { label: "Acurácia IA", value: 92 },
+      { label: "Load (s)", value: 0.8 },
+      { label: t("Retenção", "Retention"), value: 88 }
     ],
     architecture: {
       nodes: [
-        { id: "dash", label: "Dashboard App", type: "app" },
+        { id: "dash", label: "Sales Dashboard", type: "app" },
         { id: "ws", label: "Realtime WS", type: "app" },
-        { id: "db", label: "PostgreSQL", type: "db" }
+        { id: "ai", label: "Predictive AI", type: "app" },
+        { id: "db", label: "Vector DB", type: "db" }
       ],
       links: [
         { source: "dash", target: "ws" },
-        { source: "ws", target: "db" }
+        { source: "dash", target: "ai" },
+        { source: "ai", target: "db" }
       ]
     }
   },
   {
-    title: "Pastelarica Delivery",
-    description: t("Plataforma de delivery online e catálogo interativo dedicada à Pastelarica. Integração nativa com a API do WhatsApp para otimizar e automatizar o fluxo de pedidos de forma ágil.", "Online delivery platform and interactive catalog dedicated to Pastelarica. Native integration with the WhatsApp API to optimize and automate the order flow agilely."),
-    tags: ["React", "TypeScript", "E-commerce", "WhatsApp API"],
-    icon: Pizza,
+    title: "CloudMatrix Control Plane",
+    description: t("Console unificado de gerenciamento para orquestração de infraestrutura multicloud. Otimização de custos, monitoramento de saúde de clusters e automação de deploy CI/CD.", "Unified management console for multi-cloud infrastructure orchestration. Cost optimization, cluster health monitoring, and CI/CD deployment automation."),
+    tags: ["Cloud", "React", "Kubernetes", "Go"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Arquitetura", "View Architecture"),
     metrics: [
-      { label: t("Conversão", "Conversion"), value: 45 },
-      { label: "T. Pedido", value: 1.5 },
-      { label: "Integrações", value: 2 },
-      { label: "Satisfação", value: 98 }
+      { label: "Clusters", value: 500 },
+      { label: "Deploy (s)", value: 45 },
+      { label: "Savings (%)", value: 30 },
+      { label: "Uptime", value: 99.99 }
     ],
     architecture: {
       nodes: [
-        { id: "store", label: "Storefront UI", type: "app" },
-        { id: "cart", label: "Cart Engine", type: "app" },
-        { id: "wba", label: "WhatsApp API", type: "app" },
-        { id: "db", label: "Products DB", type: "db" }
+        { id: "ui", label: "Control Plane UI", type: "app" },
+        { id: "api", label: "Orchestration API", type: "app" },
+        { id: "k8s", label: "K8s Clusters", type: "app" },
+        { id: "metrics", label: "Time-Series DB", type: "db" }
       ],
       links: [
-        { source: "store", target: "cart" },
-        { source: "store", target: "db" },
-        { source: "cart", target: "wba" }
+        { source: "ui", target: "api" },
+        { source: "api", target: "k8s" },
+        { source: "k8s", target: "metrics" },
+        { source: "metrics", target: "ui" }
       ]
     }
-  },
+  }
+  ,
   {
-    title: "Point Dog",
-    description: t("Sistema de cardápio digital e delivery sob medida para o Point Dog. Foco em experiência mobile-first, conversão rápida e facilidade de gestão de pedidos integrados ao WhatsApp.", "Custom digital menu and delivery system for Point Dog. Focus on mobile-first experience, fast conversion and ease of order management integrated with WhatsApp."),
-    tags: ["React", "TypeScript", "Mobile-First", "WhatsApp API"],
-    icon: Store,
-    linkText: t("Ver Arquitetura", "View Architecture"),
-    metrics: [
-      { label: "Mobile Conv.", value: 52 },
-      { label: "Carregamento", value: 0.9 },
-      { label: t("Retenção", "Retention"), value: 88 },
-      { label: "Satisfação", value: 95 }
-    ],
-    architecture: {
-      nodes: [
-        { id: "store", label: "Mobile UI", type: "app" },
-        { id: "cart", label: "Cart Engine", type: "app" },
-        { id: "wba", label: "WhatsApp API", type: "app" },
-        { id: "db", label: "Menu DB", type: "db" }
-      ],
-      links: [
-        { source: "store", target: "cart" },
-        { source: "store", target: "db" },
-        { source: "cart", target: "wba" }
-      ]
-    }
-  },
-  {
-    title: "Vaapty Landing Page",
-    description: t("Landing page premium e de altíssima conversão desenvolvida para a Vaapty. Arquitetura otimizada ao extremo para SEO, geração de leads qualificados e tempo de carregamento.", "Premium, highly converting landing page developed for Vaapty. Architecture optimized to the extreme for SEO, qualified lead generation and loading time."),
-    tags: ["React", "TailwindCSS", "Automotive", "SEO"],
-    icon: Car,
+    title: "Luminos Streaming",
+    description: t("Plataforma de streaming de vídeo OTT com baixa latência e qualidade 4K adaptativa.", "OTT video streaming platform with low latency and adaptive 4K quality."),
+    tags: ["React", "Go", "WebRTC", "Redis"],
+    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: "Lighthouse", value: 100 },
-      { label: "Leads/Dia", value: 200 },
-      { label: "Bounce", value: 18 },
-      { label: "Load (s)", value: 0.7 }
+      { label: "Latência (ms)", value: 12 },
+      { label: "Uptime", value: 99.99 },
+      { label: "QoS", value: 100 },
+      { label: "Usuários (M)", value: 2.5 }
     ],
     architecture: {
       nodes: [
-        { id: "ssg", label: "Static Output", type: "app" },
+        { id: "player", label: "Video Player", type: "app" },
         { id: "cdn", label: "Global CDN", type: "app" },
-        { id: "leads", label: "CRM Integration", type: "db" }
+        { id: "transcoder", label: "Media Engine", type: "app" }
       ],
       links: [
-        { source: "ssg", target: "cdn" },
-        { source: "cdn", target: "leads" }
+        { source: "player", target: "cdn" },
+        { source: "cdn", target: "transcoder" }
       ]
     }
   },
   {
-    title: "Sorte Na Bet",
-    description: t("Landing page focada no mercado de iGaming e apostas. Design imersivo, alta performance (SSG) e estrutura feita para maximizar taxas de clique (CTR) e retenção de usuários.", "Landing page focused on the iGaming and betting market. Immersive design, high performance (SSG) and structure designed to maximize click-through rates (CTR) and user retention."),
-    tags: ["Vite", "TailwindCSS", "iGaming", "Marketing"],
-    icon: Dices,
+    title: "Pulse HealthTech",
+    description: t("Prontuário eletrônico unificado e sistema de telemedicina focado em segurança de dados HIPAA.", "Unified electronic health record and telemedicine system focused on HIPAA data security."),
+    tags: ["Health", "Next.js", "Python", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Arquitetura", "View Architecture"),
     metrics: [
-      { label: "CTR", value: 15.5 },
-      { label: "Lighthouse", value: 98 },
-      { label: t("Conversão", "Conversion"), value: 12 },
-      { label: "Load (s)", value: 0.8 }
+      { label: "Segurança", value: 100 },
+      { label: "Pacientes (k)", value: 850 },
+      { label: "Uptime", value: 99.9 },
+      { label: "Consultas/dia", value: 15000 }
     ],
     architecture: {
       nodes: [
-        { id: "ssg", label: "Vite + SSG", type: "app" },
-        { id: "cdn", label: "Edge CDN", type: "app" },
-        { id: "analytics", label: "Event Tracker", type: "db" }
+        { id: "app", label: "Patient App", type: "app" },
+        { id: "api", label: "Healthcare API", type: "app" },
+        { id: "db", label: "Secure DB", type: "db" }
       ],
       links: [
-        { source: "ssg", target: "cdn" },
-        { source: "cdn", target: "analytics" }
+        { source: "app", target: "api" },
+        { source: "api", target: "db" }
       ]
     }
   },
   {
-    title: "Multiverso Nerd",
-    description: t("Portal e landing page premium com foco na cultura geek e pop. Estruturada para ranqueamento rápido em motores de busca (SEO) com navegação fluída e design marcante.", "Premium portal and landing page focused on geek and pop culture. Structured for quick search engine ranking (SEO) with fluid navigation and striking design."),
-    tags: ["React", "SSG", "Geek", "SEO"],
-    icon: Rocket,
+    title: "Vortex Logistics",
+    description: t("Orquestração de frotas em tempo real com rastreamento GPS e rotas otimizadas por IA.", "Real-time fleet orchestration with GPS tracking and AI-optimized routes."),
+    tags: ["Logistics", "React Native", "Node.js", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c50a63?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: t("Visitas/Mês", "Visits/Month"), value: 50000 },
-      { label: "Lighthouse", value: 100 },
-      { label: "Bounce", value: 22 },
-      { label: "SEO Score", value: 100 }
+      { label: "Entregas (M)", value: 1.2 },
+      { label: "Economia (M)", value: 4.5 },
+      { label: "Precisão (%)", value: 98 },
+      { label: "Veículos", value: 5000 }
     ],
     architecture: {
       nodes: [
-        { id: "ssg", label: "Static Output", type: "app" },
-        { id: "cdn", label: "Global CDN", type: "app" },
-        { id: "cms", label: "Headless CMS", type: "db" }
+        { id: "mobile", label: "Driver App", type: "app" },
+        { id: "ws", label: "Socket Server", type: "app" },
+        { id: "ai", label: "Route AI", type: "app" }
       ],
       links: [
-        { source: "ssg", target: "cdn" },
-        { source: "cdn", target: "cms" }
+        { source: "mobile", target: "ws" },
+        { source: "ws", target: "ai" }
       ]
     }
   },
   {
-    title: "Agência de Crédito",
-    description: t("Landing page corporativa para agências de crédito. Construída com React e TailwindCSS, focada em credibilidade, rápida conversão de leads e performance otimizada.", "Corporate landing page for credit agencies. Built with React and TailwindCSS, focused on credibility, fast lead conversion and optimized performance."),
-    tags: ["React", "TypeScript", "TailwindCSS", "Finanças"],
-    icon: Landmark,
+    title: "Stellar PropTech",
+    description: t("Marketplace imobiliário com tours virtuais em 3D e contratos inteligentes.", "Real estate marketplace with 3D virtual tours and smart contracts."),
+    tags: ["Real Estate", "Vue", "Three.js", "Solidity"],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Arquitetura", "View Architecture"),
     metrics: [
-      { label: "Lighthouse", value: 99 },
-      { label: t("Conversão", "Conversion"), value: 18 },
-      { label: "Bounce", value: 25 },
-      { label: "Load (s)", value: 0.9 }
+      { label: "Propriedades", value: 25000 },
+      { label: "Conversão (%)", value: 12 },
+      { label: "Velocidade (s)", value: 1.2 },
+      { label: "Imersão", value: 100 }
     ],
     architecture: {
       nodes: [
-        { id: "ssg", label: "Static Output", type: "app" },
-        { id: "cdn", label: "Edge CDN", type: "app" },
-        { id: "leads", label: "Lead Capture", type: "db" }
+        { id: "web", label: "Web Portal", type: "app" },
+        { id: "3d", label: "3D Engine", type: "app" },
+        { id: "chain", label: "Blockchain", type: "db" }
       ],
       links: [
-        { source: "ssg", target: "cdn" },
-        { source: "cdn", target: "leads" }
+        { source: "web", target: "3d" },
+        { source: "web", target: "chain" }
       ]
     }
   },
   {
-    title: "Escola Coração de Mãe",
-    description: t("Landing page institucional educacional desenvolvida para transmitir confiança e carinho. Otimizada para SEO local e com alta velocidade de carregamento (Vite + TailwindCSS).", "Educational institutional landing page developed to convey trust and affection. Optimized for local SEO and with high loading speed (Vite + TailwindCSS)."),
-    tags: ["React", "Vite", "TailwindCSS", "Educação"],
-    icon: School,
+    title: "CyberShield SecOps",
+    description: t("Dashboard de segurança cibernética com detecção de intrusão em tempo real.", "Cybersecurity dashboard with real-time intrusion detection."),
+    tags: ["Security", "React", "Rust", "Elasticsearch"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: t("Acessibilidade", "Accessibility"), value: 100 },
-      { label: t("Matrículas/Mês", "Enrollments/Month"), value: 45 },
-      { label: "Lighthouse", value: 100 },
-      { label: t("Retenção", "Retention"), value: 75 }
+      { label: "Ameaças Block", value: 15000 },
+      { label: "Análise (ms)", value: 2 },
+      { label: "Precisão (%)", value: 99.9 },
+      { label: "Uptime", value: 100 }
     ],
     architecture: {
       nodes: [
-        { id: "spa", label: "React SPA", type: "app" },
-        { id: "cdn", label: "Global CDN", type: "app" },
-        { id: "analytics", label: "Event Tracker", type: "db" }
+        { id: "dash", label: "SecOps UI", type: "app" },
+        { id: "engine", label: "Detection Engine", type: "app" },
+        { id: "logs", label: "Log Storage", type: "db" }
       ],
       links: [
-        { source: "spa", target: "cdn" },
-        { source: "cdn", target: "analytics" }
+        { source: "dash", target: "engine" },
+        { source: "engine", target: "logs" }
       ]
     }
   },
   {
-    title: "Nosso Amor (Template Romântico)",
-    description: t("Site interativo e romântico, ideal para presentes de aniversário, Dia dos Namorados e casamentos. Totalmente personalizável, focado em criar experiências e memórias inesquecíveis.", "Interactive and romantic website, ideal for birthday, Valentine's Day and wedding gifts. Fully customizable, focused on creating unforgettable experiences and memories."),
-    tags: ["React", "TypeScript", "Interativo", "Animações"],
-    icon: Heart,
-    linkText: t("Ver Estudo de Caso", "View Case Study"),
+    title: "EcoTrack Grid",
+    description: t("Monitoramento de pegada de carbono e otimização de energia renovável para indústrias.", "Carbon footprint monitoring and renewable energy optimization for industries."),
+    tags: ["GreenTech", "Svelte", "Python", "TimescaleDB"],
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Arquitetura", "View Architecture"),
     metrics: [
-      { label: t("Engajamento", "Engagement"), value: 95 },
-      { label: "Dwell Time", value: 300 },
-      { label: "FPS", value: 60 },
-      { label: "Load (s)", value: 1.2 }
+      { label: "Redução CO2", value: 45 },
+      { label: "Sensores (k)", value: 120 },
+      { label: "Previsão (%)", value: 94 },
+      { label: "ROI (%)", value: 250 }
     ],
     architecture: {
       nodes: [
-        { id: "ui", label: "Interactive UI", type: "app" },
-        { id: "anim", label: "Animation Engine", type: "app" },
-        { id: "assets", label: "Media CDN", type: "db" }
+        { id: "iot", label: "IoT Sensors", type: "app" },
+        { id: "ingest", label: "Data Ingestion", type: "app" },
+        { id: "db", label: "Time-Series", type: "db" }
       ],
       links: [
-        { source: "ui", target: "anim" },
-        { source: "anim", target: "assets" }
+        { source: "iot", target: "ingest" },
+        { source: "ingest", target: "db" }
       ]
     }
   },
   {
-    title: "Wonder Games Cloud",
-    description: t("Plataforma de emulação via web para jogos nostálgicos. Reviva clássicos no browser com tecnologia WebAssembly (WASM), proporcionando alta fidelidade e zero downloads.", "Web-based emulation platform for nostalgic games. Relive classics in the browser with WebAssembly (WASM) technology, providing high fidelity and zero downloads."),
-    tags: ["React", "TypeScript", "WASM", "Gaming"],
-    icon: Gamepad2,
+    title: "Quantum DevTools",
+    description: t("Plataforma de CI/CD baseada em IA que prevê falhas de compilação e otimiza testes.", "AI-based CI/CD platform that predicts build failures and optimizes tests."),
+    tags: ["DevOps", "Go", "React", "Docker"],
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=2000",
     linkText: t("Ver Estudo de Caso", "View Case Study"),
     metrics: [
-      { label: "FPS", value: 60 },
-      { label: "Latency (ms)", value: 15 },
-      { label: t("Jogos", "Games"), value: 100 },
-      { label: "Dwell Time", value: 45 }
+      { label: "Tempo Build", value: 65 },
+      { label: "Falhas Evitadas", value: 85 },
+      { label: "Deploy/dia", value: 5000 },
+      { label: "Produtividade", value: 40 }
     ],
     architecture: {
       nodes: [
-        { id: "web", label: "Web Client", type: "app" },
-        { id: "wasm", label: "WASM Emulator", type: "app" },
-        { id: "roms", label: "ROM Storage", type: "db" },
-        { id: "state", label: "Save States", type: "db" }
+        { id: "runner", label: "CI Runner", type: "app" },
+        { id: "ai", label: "Predictor", type: "app" },
+        { id: "cache", label: "Artifact Cache", type: "db" }
       ],
       links: [
-        { source: "web", target: "wasm" },
-        { source: "wasm", target: "roms" },
-        { source: "wasm", target: "state" }
+        { source: "runner", target: "ai" },
+        { source: "runner", target: "cache" }
+      ]
+    }
+  },
+  {
+    title: "Aura Smart Home",
+    description: t("Hub de IoT residencial unificado com automação residencial proativa e segurança.", "Unified residential IoT hub with proactive home automation and security."),
+    tags: ["IoT", "React Native", "MQTT", "AWS IoT"],
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Arquitetura", "View Architecture"),
+    metrics: [
+      { label: "Dispositivos", value: 250000 },
+      { label: "Latência (ms)", value: 15 },
+      { label: "Uptime", value: 99.9 },
+      { label: "Economia (kWh)", value: 30 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "mobile", label: "Home App", type: "app" },
+        { id: "broker", label: "MQTT Broker", type: "app" },
+        { id: "device", label: "Smart Devices", type: "app" }
+      ],
+      links: [
+        { source: "mobile", target: "broker" },
+        { source: "broker", target: "device" }
+      ]
+    }
+  },
+  {
+    title: "Nova EduTech",
+    description: t("Ambiente virtual de aprendizagem adaptativo que personaliza trilhas educacionais.", "Adaptive virtual learning environment that personalizes educational tracks."),
+    tags: ["EdTech", "Next.js", "GraphQL", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Estudo de Caso", "View Case Study"),
+    metrics: [
+      { label: "Alunos (k)", value: 500 },
+      { label: "Engajamento", value: 75 },
+      { label: "Retenção (%)", value: 92 },
+      { label: "Cursos", value: 1200 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "web", label: "Student Portal", type: "app" },
+        { id: "api", label: "LMS API", type: "app" },
+        { id: "db", label: "Knowledge Graph", type: "db" }
+      ],
+      links: [
+        { source: "web", target: "api" },
+        { source: "api", target: "db" }
+      ]
+    }
+  },
+  {
+    title: "Velocity DeFi",
+    description: t("Plataforma de negociação algorítmica de alta frequência para criptoativos.", "High-frequency algorithmic trading platform for crypto assets."),
+    tags: ["Crypto", "Rust", "React", "Kafka"],
+    image: "https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Arquitetura", "View Architecture"),
+    metrics: [
+      { label: "TPS", value: 100000 },
+      { label: "Latência (µs)", value: 50 },
+      { label: "Volume (B)", value: 2.5 },
+      { label: "Segurança", value: 100 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "ui", label: "Trading Terminal", type: "app" },
+        { id: "engine", label: "Matching Engine", type: "app" },
+        { id: "chain", label: "Liquidity Pool", type: "db" }
+      ],
+      links: [
+        { source: "ui", target: "engine" },
+        { source: "engine", target: "chain" }
+      ]
+    }
+  },
+  {
+    title: "Vertex MMO Engine",
+    description: t("Backend escalável para jogos multijogador massivos online com física em tempo real.", "Scalable backend for massive multiplayer online games with real-time physics."),
+    tags: ["Gaming", "C++", "Go", "Redis"],
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Estudo de Caso", "View Case Study"),
+    metrics: [
+      { label: "CCU (k)", value: 200 },
+      { label: "Tick Rate", value: 128 },
+      { label: "Latência (ms)", value: 30 },
+      { label: "Uptime", value: 99.99 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "client", label: "Game Client", type: "app" },
+        { id: "server", label: "Game Server", type: "app" },
+        { id: "state", label: "State DB", type: "db" }
+      ],
+      links: [
+        { source: "client", target: "server" },
+        { source: "server", target: "state" }
+      ]
+    }
+  },
+  {
+    title: "Apex HR Suite",
+    description: t("Sistema de gestão de talentos focado em performance, feedbacks contínuos e analytics.", "Talent management system focused on performance, continuous feedback, and analytics."),
+    tags: ["HR", "React", "Node.js", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Arquitetura", "View Architecture"),
+    metrics: [
+      { label: "Empresas", value: 1500 },
+      { label: "Feedbacks (M)", value: 5 },
+      { label: "Retenção (%)", value: 98 },
+      { label: "Satisfação", value: 100 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "web", label: "HR Dashboard", type: "app" },
+        { id: "api", label: "Analytics API", type: "app" },
+        { id: "db", label: "Data Warehouse", type: "db" }
+      ],
+      links: [
+        { source: "web", target: "api" },
+        { source: "api", target: "db" }
+      ]
+    }
+  },
+  {
+    title: "Nimbus CloudSync",
+    description: t("SaaS de armazenamento em nuvem com sincronização delta e criptografia ponta-a-ponta.", "Cloud storage SaaS with delta sync and end-to-end encryption."),
+    tags: ["SaaS", "React", "Go", "S3"],
+    image: "https://images.unsplash.com/photo-1614064641913-6b7140414e71?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Estudo de Caso", "View Case Study"),
+    metrics: [
+      { label: "Arquivos (B)", value: 1.5 },
+      { label: "Sync (ms)", value: 150 },
+      { label: "Segurança", value: 100 },
+      { label: "Uptime", value: 99.99 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "client", label: "Desktop/Web", type: "app" },
+        { id: "sync", label: "Sync Engine", type: "app" },
+        { id: "storage", label: "Object Storage", type: "db" }
+      ],
+      links: [
+        { source: "client", target: "sync" },
+        { source: "sync", target: "storage" }
+      ]
+    }
+  },
+  {
+    title: "Solaris Grid",
+    description: t("Plataforma de distribuição inteligente de energia solar para microrredes urbanas.", "Smart solar energy distribution platform for urban microgrids."),
+    tags: ["Energy", "Vue", "Python", "InfluxDB"],
+    image: "https://images.unsplash.com/photo-1509391366360-584a5538eec4?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Arquitetura", "View Architecture"),
+    metrics: [
+      { label: "Microrredes", value: 450 },
+      { label: "Capacidade (MW)", value: 120 },
+      { label: "Eficiência (%)", value: 95 },
+      { label: "Analytics", value: 100 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "grid", label: "Grid Control", type: "app" },
+        { id: "api", label: "Telemetry API", type: "app" },
+        { id: "db", label: "Time-Series", type: "db" }
+      ],
+      links: [
+        { source: "grid", target: "api" },
+        { source: "api", target: "db" }
+      ]
+    }
+  },
+  {
+    title: "Zenith Generative AI",
+    description: t("Estúdio de criação de conteúdo movido a IA com geração de texto, imagem e áudio integrados.", "AI-powered content creation studio with integrated text, image, and audio generation."),
+    tags: ["AI", "React", "Python", "PyTorch"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2000",
+    linkText: t("Ver Estudo de Caso", "View Case Study"),
+    metrics: [
+      { label: "Requisições/dia", value: 500000 },
+      { label: "Geração (s)", value: 1.5 },
+      { label: "Modelos", value: 15 },
+      { label: "Precisão (%)", value: 98 }
+    ],
+    architecture: {
+      nodes: [
+        { id: "ui", label: "Studio UI", type: "app" },
+        { id: "gateway", label: "Model Gateway", type: "app" },
+        { id: "inference", label: "GPU Cluster", type: "db" }
+      ],
+      links: [
+        { source: "ui", target: "gateway" },
+        { source: "gateway", target: "inference" }
       ]
     }
   }
@@ -317,10 +484,10 @@ export function Portfolio() {
         <div className="w-full">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
-              <div className="inline-block px-3 py-1 bg-neon-purple/10 border border-neon-purple/20 rounded-full text-[10px] text-neon-purple font-bold tracking-[0.2em] uppercase mb-4 w-fit">
+              <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-neon-purple font-bold tracking-[0.2em] uppercase mb-4 w-fit">
                 {t('Nosso Portfólio', 'Our Portfolio')}
               </div>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">{t('Projetos em ', 'Featured ')}<span className="text-gradient">{t('Destaque', 'Projects')}</span></h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white">{t('Projetos em ', 'Featured ')}<span className="text-gradient">{t('Destaque', 'Projects')}</span></h2>
               <p className="text-gray-400 max-w-xl">{t('Nosso portfólio de engenharia. Produtos reais, construídos com tecnologia robusta a partir de nosso histórico de projetos.', 'Our engineering portfolio. Real products, built with robust technology from our project history.')}</p>
             </div>
           </div>
@@ -336,9 +503,9 @@ export function Portfolio() {
                 className="group glass-card overflow-hidden flex flex-col lg:flex-row cursor-pointer h-full"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="w-full lg:w-1/3 min-h-[120px] md:min-h-[200px] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a0f] to-[#020204]">
-                  <div className="absolute inset-0 bg-neon-blue/5 group-hover:bg-neon-blue/10 transition-colors duration-500" />
-                  <project.icon className="text-neon-blue opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 w-12 h-12 md:w-20 md:h-20" />
+                <div className="w-full lg:w-1/3 min-h-[120px] md:min-h-[200px] flex items-center justify-center relative overflow-hidden bg-[#020204]">
+                  <div className="absolute inset-0 bg-neon-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 </div>
                 
                 <div className="w-full lg:w-2/3 p-4 md:p-8 lg:p-12 flex flex-col relative bg-gradient-to-br from-white/[0.02] to-transparent flex-1">
@@ -349,13 +516,13 @@ export function Portfolio() {
                   
                   <div className="flex flex-wrap gap-1 md:gap-3 mb-2 md:mb-8">
                     {project.tags.slice(0, 3).map((tag, i) => (
-                      <span key={i} className="px-1.5 py-0.5 md:px-3 md:py-1.5 text-[8px] sm:text-[9px] md:text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400 whitespace-nowrap">
+                      <span key={i} className="px-1.5 py-0.5 md:px-3 md:py-1.5 text-[8px] sm:text-[9px] md:text-xs font-mono rounded bg-black/30 border border-white/10 text-gray-400 backdrop-blur-md tracking-wider whitespace-nowrap">
                         {tag}
                       </span>
                     ))}
                   </div>
                   
-                  <button className="flex items-center gap-1 md:gap-2 text-white text-[10px] sm:text-[11px] md:text-sm font-bold w-fit group/btn group-hover:text-neon-purple transition-colors mt-auto">
+                  <button className="flex items-center gap-1 md:gap-2 text-white text-[10px] sm:text-[11px] md:text-sm font-bold w-fit group/btn group-hover:text-neon-blue transition-colors mt-auto">
                     <span className="hidden sm:inline">{project.linkText}</span>
                     <span className="sm:hidden">{t("Ver", "View")}</span>
                     <ArrowUpRight className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform w-3 h-3 md:w-4 md:h-4" />

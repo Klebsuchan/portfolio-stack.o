@@ -6,6 +6,7 @@
 import { StrictMode } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { LogoTicker } from "./components/LogoTicker";
 import { TrustBadges } from './components/TrustBadges';
 import { Services } from './components/Services';
 import { Pricing } from './components/Pricing';
@@ -21,10 +22,9 @@ import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { AboutUs } from './components/AboutUs';
 import { Terminal } from './components/Terminal';
-import { SiteHealth } from './components/SiteHealth';
+import { BackToTop } from './components/BackToTop';
 import { CookieBanner } from './components/CookieBanner';
 import { ContactCTA } from './components/ContactCTA';
-import { BackToTop } from './components/BackToTop';
 import { useLanguage } from './contexts/LanguageContext';
 import { Globe } from 'lucide-react';
 
@@ -36,7 +36,6 @@ export default function App() {
       <CustomCursor />
       <ScrollProgress />
       <BackToTop />
-      <SiteHealth />
       <CookieBanner />
 
       
@@ -49,6 +48,7 @@ export default function App() {
       <div className="relative z-10 flex flex-col w-full">
         <Header />
         <Hero />
+        <LogoTicker />
         <TrustBadges />
         <Stats />
         <Services />

@@ -2,6 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { ArrowRight, Code2 } from 'lucide-react';
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import BlackHole from './originkit/ui/blackhole';
 
 export function Hero() {
   const { t } = useLanguage();
@@ -39,46 +40,11 @@ export function Hero() {
   const p4y = useTransform(smoothMouseY, [-1, 1], [-80, 80]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-start overflow-hidden px-6 md:px-12 lg:px-16 pt-20">
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,242,255,0.05)_0%,transparent_50%)]"></div>
-        
-        {/* Parallax Planets & Constellations */}
-        <motion.div 
-          style={{ x: p1x, y: p1y }}
-          className="absolute top-[10%] right-[10%] md:right-[20%] w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-neon-blue/30 via-neon-purple/10 to-transparent border-2 border-neon-blue/40 backdrop-blur-md flex items-center justify-center shadow-[0_0_120px_rgba(0,242,255,0.4)] opacity-100"
-        >
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full border-2 border-neon-blue/30 animate-[spin_20s_linear_infinite]">
-            <div className="absolute w-3 h-3 bg-neon-blue rounded-full top-[10%] left-[20%] shadow-[0_0_20px_#00f2ff]"></div>
-            <div className="absolute w-2 h-2 bg-neon-purple rounded-full bottom-[15%] right-[15%] shadow-[0_0_15px_#bc13fe]"></div>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          style={{ x: p2x, y: p2y }}
-          className="absolute bottom-[10%] right-[30%] md:right-[40%] w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-tr from-neon-purple/30 via-neon-blue/10 to-transparent border-2 border-neon-purple/40 backdrop-blur-md shadow-[0_0_100px_rgba(188,19,254,0.4)] opacity-100"
-        >
-           <div className="absolute w-2 h-2 bg-white rounded-full top-[50%] right-[20%] shadow-[0_0_10px_#fff]"></div>
-           <div className="absolute inset-0 rounded-full border-2 border-neon-purple/30 scale-125"></div>
-           <div className="absolute inset-0 rounded-full border border-neon-blue/30 scale-150 border-dashed animate-[spin_30s_linear_infinite_reverse]"></div>
-        </motion.div>
-
-        <motion.div 
-          style={{ x: p3x, y: p3y }}
-          className="absolute top-[25%] left-[40%] w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-neon-blue/40 to-neon-purple/30 border-2 border-neon-blue/30 backdrop-blur-sm opacity-90 shadow-[0_0_40px_rgba(0,242,255,0.3)]"
-        />
-        
-        <motion.div 
-          style={{ x: p4x, y: p4y }}
-          className="absolute top-[-10%] left-[10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-neon-blue/20 blur-[80px]"
-        />
-
-        {/* Floating Stars / Constellation Points */}
-        <motion.div style={{ x: p2x, y: p1y }} className="absolute top-[40%] right-[25%] w-2 h-2 bg-white rounded-full shadow-[0_0_15px_#fff]"></motion.div>
-        <motion.div style={{ x: p1x, y: p2y }} className="absolute top-[20%] right-[40%] w-2.5 h-2.5 bg-neon-blue rounded-full shadow-[0_0_20px_#00f2ff]"></motion.div>
-        <motion.div style={{ x: p3x, y: p4y }} className="absolute bottom-[30%] right-[15%] w-2 h-2 bg-neon-purple rounded-full shadow-[0_0_15px_#bc13fe]"></motion.div>
-        <motion.div style={{ x: p4x, y: p3y }} className="absolute top-[60%] left-[50%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_10px_#fff] opacity-80"></motion.div>
+    <section className="relative min-h-screen flex items-center justify-start overflow-hidden px-6 md:px-12 lg:px-16 pt-32 md:pt-40">
+      {/* Black Hole Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <BlackHole colors={["#00f2ff", "#bc13fe", "#ffffff", "#7000ff", "#38bdf8"]} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020204]/90 via-[#020204]/50 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full text-left">
@@ -86,46 +52,37 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block px-3 py-1 bg-neon-blue/10 border border-neon-blue/20 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-6 w-fit"
+          className="inline-block px-3 py-1 bg-transparent bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-white rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-6 w-fit"
         >
           Software Architecture & UI/UX
         </motion.div>
         
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-[80px] font-black leading-[1.1] md:leading-[0.9] tracking-tight mb-8"
-        >
-          {t('Transformamos', 'We turn')} <br className="hidden md:block" />
-          <span className="text-gradient">{t('ideias em', 'ideas into')}<br className="hidden md:block" /> {t('software.', 'software.')}</span>
-        </motion.h1>
+        <h1 className="text-6xl sm:text-7xl md:text-[130px] font-black leading-[1] md:leading-[0.85] tracking-tighter mb-8">          <motion.span             initial="hidden"             animate="visible"             variants={{              hidden: { opacity: 0 },              visible: {                 opacity: 1,                 transition: { staggerChildren: 0.05, delayChildren: 0.2 }               }            }}            className="block"          >            {String(t('Transformamos', 'We turn')).split('').map((char, index) => (              <motion.span                 key={`w1-${index}`}                 variants={{                   hidden: { opacity: 0, y: 20 },                   visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 200 } }                 }}                 className="inline-block"              >                {char === ' ' ? '\u00A0' : char}              </motion.span>            ))}            {' '}            <br className="hidden md:block" />            <span className="text-gradient block mt-2">              {String(t('ideias em software.', 'ideas into software.')).split('').map((char, index) => (                <motion.span                   key={`w2-${index}`}                   variants={{                     hidden: { opacity: 0, y: 20, rotateX: 90 },                     visible: { opacity: 1, y: 0, rotateX: 0, transition: { type: "spring", damping: 12, stiffness: 200 } }                   }}                   className="inline-block origin-bottom"                >                  {char === ' ' ? '\u00A0' : char}                </motion.span>              ))}            </span>          </motion.span>        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base md:text-lg text-gray-400 max-w-[400px] mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-gray-300 max-w-[700px] text-zinc-400 border-l border-zinc-800 mb-12 leading-relaxed font-light tracking-wide border-l-2 border-white/10 pl-8 py-2"
         >
           {t(
-            'Engenharia full-stack de alta performance para marcas que buscam autoridade digital e código limpo.',
-            'High-performance full-stack engineering for brands seeking digital authority and clean code.'
+            'Engenharia full stack de alta performance para marcas que buscam autoridade digital e código limpo.',
+            'High-performance full stack engineering for brands seeking digital authority and clean code.'
           )}
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center gap-4"
+          className="flex flex-col sm:flex-row items-center gap-6"
         >
-          <button className="glow-button w-full sm:w-auto px-6 py-4 bg-white text-black font-bold rounded-xl flex items-center justify-center group hover:bg-gray-100 transition-colors">
+          <button className="glow-button w-full sm:w-auto px-8 py-4 bg-white text-black text-xs tracking-[0.15em] font-bold rounded-full flex items-center justify-center group hover:bg-gray-100 transition-colors">
             {t('CONHEÇA A STACK.O', 'DISCOVER STACK.O')}
-            <ArrowRight size={20} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="ml-3 transform group-hover:translate-x-2 transition-transform" />
           </button>
           
-          <button className="p-4 border border-white/10 rounded-xl hover:bg-white/5 transition-colors text-gray-400">
-            <Code2 size={24} />
+          <button className="p-4 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-gray-400 backdrop-blur-md">
+            <Code2 size={20} />
           </button>
         </motion.div>
       </div>

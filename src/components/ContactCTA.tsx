@@ -36,18 +36,18 @@ export function ContactCTA() {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 lg:px-16 relative z-10 overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-blue/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-purple/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-zinc-400/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Text Content */}
           <div>
-            <div className="inline-block px-3 py-1 bg-neon-blue/10 border border-neon-blue/20 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-6 w-fit">
+            <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-6 w-fit">
               {t('Iniciar um Projeto', 'Start a Project')}
             </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 text-white leading-tight">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 text-neon-blue leading-tight">
               {t('Vamos construir algo ', 'Let\'s build something ')}<span className="text-gradient">{t('incrível juntos.', 'amazing together.')}</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
@@ -81,7 +81,7 @@ export function ContactCTA() {
             transition={{ duration: 0.6 }}
             className="bg-[#020204]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden group"
           >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white via-zinc-400 to-white opacity-50 group-hover:opacity-100 transition-opacity" />
                 <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">{t('Nome Completo', 'Full Name')}</label>
@@ -93,7 +93,7 @@ export function ContactCTA() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t("Como devemos te chamar?", "What should we call you?")}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neon-blue focus:bg-white/10 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-neon-blue placeholder-gray-600 focus:outline-none focus:border-white focus:bg-white/5 transition-all"
                 />
               </div>
               <div>
@@ -105,7 +105,7 @@ export function ContactCTA() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:border-neon-purple focus:bg-white/10 transition-all cursor-pointer"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-neon-blue appearance-none focus:outline-none focus:border-zinc-400 focus:bg-white/5 transition-all cursor-pointer"
                   >
                     <option value="" disabled className="bg-[#0a0a0f]">{t('Selecione uma opção', 'Select an option')}</option>
                     <option value="Desenvolvimento de Site/App" className="bg-[#0a0a0f]">{t('Desenvolvimento de Site / App', 'Website / App Development')}</option>
@@ -131,12 +131,12 @@ export function ContactCTA() {
                   value={formData.idea}
                   onChange={handleChange}
                   placeholder={t("Descreva brevemente o que você precisa...", "Briefly describe what you need...")}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neon-blue focus:bg-white/10 transition-all resize-none custom-scrollbar"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-neon-blue placeholder-gray-600 focus:outline-none focus:border-white focus:bg-white/5 transition-all resize-none custom-scrollbar"
                 ></textarea>
               </div>
               <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] group/btn"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-neon-blue font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] group/btn"
               >
                 <MessageCircle size={20} className="group-hover/btn:scale-110 transition-transform" />
                 {t('Enviar para o WhatsApp', 'Send via WhatsApp')}

@@ -40,10 +40,10 @@ export function Services() {
     <section className="py-24 px-6 md:px-12 lg:px-16 relative z-10">
       <div className="w-full">
         <div className="mb-12">
-          <div className="inline-block px-3 py-1 bg-neon-blue/10 border border-neon-blue/20 rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-4 w-fit">
+          <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 backdrop-blur-md text-white rounded-full text-[10px] text-neon-blue font-bold tracking-[0.2em] uppercase mb-4 w-fit">
             {t('Nossos Serviços', 'Our Services')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">{t('O Que ', 'What We ')}<span className="text-gradient">{t('Oferecemos', 'Offer')}</span></h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white">{t('O Que ', 'What We ')}<span className="text-gradient">{t('Oferecemos', 'Offer')}</span></h2>
           <p className="text-gray-400 max-w-2xl">{t('Soluções de ponta a ponta projetadas para escala, velocidade e imersão visual.', 'End-to-end solutions designed for scale, speed, and visual immersion.')}</p>
         </div>
 
@@ -59,7 +59,7 @@ export function Services() {
               className={`glass-card p-6 flex flex-col justify-between group ${service.colSpan} ${service.hasEditor || service.hasVisualization ? 'overflow-visible' : ''}`}
             >
               <div>
-                <div className="mb-6 p-4 rounded-xl bg-neon-blue/10 w-fit text-neon-blue group-hover:bg-neon-purple/10 group-hover:text-neon-purple transition-colors">
+                <div className="mb-6 p-4 rounded-xl bg-white/5 border border-white/10 w-fit text-white group-hover:bg-white/5 group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
                 <div>

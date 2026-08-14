@@ -68,7 +68,7 @@ export function Terminal() {
       <div className="w-full flex justify-center pb-12 pt-6 bg-[#020204]">
         <button 
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 text-xs font-mono text-gray-500 hover:text-neon-blue transition-colors"
+          className="flex items-center gap-2 text-xs font-mono text-gray-500 hover:text-white transition-colors"
         >
           <TerminalIcon size={14} />
           <span>{t("Abrir Terminal Interativo", "Open Interactive Terminal")}</span>

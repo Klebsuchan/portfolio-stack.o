@@ -32,7 +32,7 @@ export function SiteHealth() {
           >
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-2">
-                <Activity size={16} className="text-neon-blue" />
+                <Activity size={16} className="text-white" />
                 <span className="text-white font-bold text-sm">{t('Saúde do Sistema', 'System Health')}</span>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors">
@@ -44,10 +44,10 @@ export function SiteHealth() {
               <div className="bg-black/40 rounded-xl p-3 border border-white/5">
                 <div className="flex justify-between items-center mb-1">
                   <span className="text-xs text-gray-400 font-mono">UPTIME</span>
-                  <span className="text-xs text-neon-blue font-bold">{uptime.toFixed(3)}%</span>
+                  <span className="text-xs text-white font-bold">{uptime.toFixed(3)}%</span>
                 </div>
-                <div className="w-full bg-white/10 rounded-full h-1">
-                  <div className="bg-neon-blue h-1 rounded-full w-[99%]" />
+                <div className="w-full bg-white/5 rounded-full h-1">
+                  <div className="bg-white h-1 rounded-full w-[99%]" />
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ export function SiteHealth() {
                 <div className="bg-black/40 rounded-xl p-3 border border-white/5 flex flex-col items-center justify-center">
                   <Cpu size={14} className="text-gray-400 mb-1" />
                   <span className="text-xs text-gray-500 font-mono mb-1">BUILD</span>
-                  <span className="text-sm font-bold text-neon-purple flex items-center gap-1">
+                  <span className="text-sm font-bold text-zinc-400 flex items-center gap-1">
                     <CheckCircle2 size={12} /> PASS
                   </span>
                 </div>
@@ -80,11 +80,11 @@ export function SiteHealth() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/10 rounded-full hover:border-neon-blue/50 hover:shadow-[0_0_15px_rgba(0,242,255,0.2)] transition-all group"
+        className="flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/10 rounded-full hover:border-white/50 hover:shadow-[0_0_15px_rgba(0,242,255,0.2)] transition-all group"
       >
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-blue opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-blue"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
         <span className="text-xs font-mono text-gray-300 group-hover:text-white">{t('STATUS DA API', 'API STATUS')}</span>
         <ChevronUp size={14} className={`text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />

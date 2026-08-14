@@ -39,19 +39,19 @@ export function CookieBanner() {
           className="fixed bottom-0 left-0 right-0 z-[90] p-4 pointer-events-none flex justify-center"
         >
           <div className="bg-[#0a0a0f]/95 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)] w-full max-w-4xl pointer-events-auto relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue to-neon-purple" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white to-zinc-400" />
             
             {!showPreferences ? (
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-neon-purple/10 border border-neon-purple/20 flex items-center justify-center shrink-0">
-                    <Cookie className="text-neon-purple" size={20} />
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Cookie className="text-zinc-400" size={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-bold mb-1">{t('Privacidade e Cookies', 'Privacy and Cookies')}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-2xl">
                       {t('Utilizamos cookies para otimizar sua experiência, analisar o tráfego do site e personalizar conteúdo.', 'We use cookies to optimize your experience, analyze site traffic, and personalize content.')} 
-                      {t('Ao continuar navegando, você concorda com a nossa ', 'By continuing to browse, you agree to our ')}<a href="#" className="text-neon-blue hover:underline">{t('Política de Privacidade', 'Privacy Policy')}</a>.
+                      {t('Ao continuar navegando, você concorda com a nossa ', 'By continuing to browse, you agree to our ')}<a href="#" className="text-white hover:underline">{t('Política de Privacidade', 'Privacy Policy')}</a>.
                     </p>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export function CookieBanner() {
                   </button>
                   <button 
                     onClick={handleAcceptAll}
-                    className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-neon-blue text-black text-sm font-bold hover:bg-white transition-colors shadow-[0_0_15px_rgba(0,242,255,0.3)]"
+                    className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-white text-black text-sm font-bold hover:bg-white transition-colors shadow-[0_0_15px_rgba(0,242,255,0.3)]"
                   >
                     {t('Aceitar Todos', 'Accept All')}
                   </button>
@@ -74,7 +74,7 @@ export function CookieBanner() {
               <div className="w-full">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-white font-bold flex items-center gap-2">
-                    <Settings2 size={18} className="text-neon-blue" />
+                    <Settings2 size={18} className="text-white" />
                     Preferências de Cookies
                   </h3>
                   <button onClick={() => setShowPreferences(false)} className="text-gray-500 hover:text-white">
@@ -88,7 +88,7 @@ export function CookieBanner() {
                       <h4 className="text-white text-sm font-bold mb-1">{t('Cookies Estritamente Necessários', 'Strictly Necessary Cookies')}</h4>
                       <p className="text-gray-500 text-xs">{t('Essenciais para o funcionamento do site. Não podem ser desativados.', 'Essential for the website to function. Cannot be disabled.')}</p>
                     </div>
-                    <div className="w-10 h-5 bg-neon-blue/50 rounded-full relative opacity-50 cursor-not-allowed">
+                    <div className="w-10 h-5 bg-white/50 rounded-full relative opacity-50 cursor-not-allowed">
                       <div className="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5" />
                     </div>
                   </div>
@@ -100,7 +100,7 @@ export function CookieBanner() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-10 h-5 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-neon-purple"></div>
+                      <div className="w-10 h-5 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-zinc-400"></div>
                     </label>
                   </div>
                   
@@ -111,7 +111,7 @@ export function CookieBanner() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
-                      <div className="w-10 h-5 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-neon-purple"></div>
+                      <div className="w-10 h-5 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-zinc-400"></div>
                     </label>
                   </div>
                 </div>
@@ -119,13 +119,13 @@ export function CookieBanner() {
                 <div className="flex justify-end gap-3">
                   <button 
                     onClick={handleAcceptAll}
-                    className="px-4 py-2 text-sm text-neon-blue hover:text-white font-bold transition-colors"
+                    className="px-4 py-2 text-sm text-white hover:text-white font-bold transition-colors"
                   >
                     Aceitar Todos
                   </button>
                   <button 
                     onClick={handleSavePreferences}
-                    className="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-bold transition-colors border border-white/10"
+                    className="px-5 py-2 rounded-lg bg-white/5 hover:bg-white/20 text-white text-sm font-bold transition-colors border border-white/10"
                   >
                     {t('Salvar Preferências', 'Save Preferences')}
                   </button>

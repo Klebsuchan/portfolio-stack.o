@@ -48,7 +48,7 @@ export function InteractiveCodeEditor() {
         <button
           onClick={handleRun}
           disabled={isAnimating}
-          className="flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase bg-neon-purple/20 hover:bg-neon-purple/40 text-neon-purple px-3 py-1 rounded transition-colors disabled:opacity-50"
+          className="flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase bg-zinc-400/20 hover:bg-zinc-400/40 text-zinc-400 px-3 py-1 rounded transition-colors disabled:opacity-50"
         >
           {isAnimating ? (
             <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }}>
@@ -108,9 +108,9 @@ export function InteractiveCodeEditor() {
                 <code className="text-yellow-200">calculateTotal</code>{' = '}
                 <code className="text-gray-300">(items) =&gt;{'\n'}</code>
                 <code className="text-gray-400">  items{'\n'}</code>
-                <code className="text-neon-blue">    .filter</code>
+                <code className="text-white">    .filter</code>
                 <code className="text-gray-400">(item =&gt; item.active){'\n'}</code>
-                <code className="text-neon-purple">    .reduce</code>
+                <code className="text-zinc-400">    .reduce</code>
                 <code className="text-gray-400">((sum, item) =&gt; sum + item.price, 0);</code>
               </pre>
             </motion.div>
@@ -125,7 +125,7 @@ export function InteractiveCodeEditor() {
               animate={{ top: '100%', opacity: [0, 1, 1, 0] }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "linear" }}
-              className="absolute left-0 right-0 h-1 bg-neon-purple/50 shadow-[0_0_10px_#bc13fe] z-10"
+              className="absolute left-0 right-0 h-1 bg-zinc-400/50 shadow-[0_0_10px_#bc13fe] z-10"
             />
           )}
         </AnimatePresence>

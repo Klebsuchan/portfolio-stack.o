@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,33 +6,51 @@
   --color-neon-purple: #bc13fe;
   --color-dark-bg: #020204;
   --color-dark-surface: rgba(255, 255, 255, 0.03);
-  --color-dark-border: rgba(255, 255, 255, 0.1);
-  --font-sans: "Inter", "Space Grotesk", system-ui, sans-serif;
+  --color-dark-border: rgba(255, 255, 255, 0.06);
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
 }
 
 @layer utilities {
   .glass {
-    @apply bg-dark-surface backdrop-blur-xl border border-dark-border;
+    @apply bg-[#020204]/60 backdrop-blur-2xl border border-white/5;
   }
   
   .glass-card {
-    @apply bg-dark-surface backdrop-blur-xl border border-dark-border rounded-3xl transition-all duration-300 hover:border-neon-purple/50;
+    @apply bg-gradient-to-br from-[#ffffff]/[0.03] to-transparent backdrop-blur-xl border border-white/5 rounded-[24px] transition-all duration-500 hover:border-white/15 hover:shadow-[0_0_30px_rgba(188,19,254,0.1)];
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400;
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-purple;
   }
   
   .glow-button {
-    @apply relative overflow-hidden transition-all duration-300;
+    @apply relative overflow-hidden transition-all duration-500 hover:-translate-y-1 active:translate-y-0 bg-white text-black;
   }
   
   .glow-button:hover {
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4), 0 0 40px rgba(188, 19, 254, 0.2);
+    box-shadow: 0 10px 40px -10px rgba(0, 242, 255, 0.4);
   }
 }
 
 body {
   background-color: var(--color-dark-bg);
   color: #e2e8f0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: #ffffff;
+}
+
+::selection {
+  background: rgba(188, 19, 254, 0.3);
+  color: #ffffff;
 }
