@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+# Bloqueia rotas de API internas ou caminhos indesejados (se houver no futuro)
+Disallow: /api/
+
 Sitemap: https://stacko.com.br/sitemap.xml
