@@ -1,0 +1,15 @@
+{
+  "name": "Stack.O Soluções Digitais",
+  "short_name": "Stack.O",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#020204",
+  "background_color": "#020204",
+  "display": "standalone"
+}
