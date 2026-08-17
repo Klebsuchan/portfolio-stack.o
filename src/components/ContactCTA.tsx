@@ -24,7 +24,10 @@ export function ContactCTA() {
     
     if (!formData.name || !formData.service || !formData.idea) return;
 
-    const phoneNumber = "5554991064604"; // Replace with actual WhatsApp number
+    let phoneNumber = "5554991064604"; // Default to Braian
+    if (formData.service === "Refatoração de Código") {
+      phoneNumber = "5554996684874"; // Jhonatan
+    }
     const message = t(
       `Olá Stack.O! Gostaria de falar sobre um novo projeto.%0A%0A*Nome:* ${formData.name}%0A*Serviço Desejado:* ${formData.service}%0A*Sobre a Ideia:* ${formData.idea}`,
       `Hello Stack.O! I would like to talk about a new project.%0A%0A*Name:* ${formData.name}%0A*Desired Service:* ${formData.service}%0A*About the Idea:* ${formData.idea}`

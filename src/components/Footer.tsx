@@ -6,6 +6,38 @@ import stackLogo from '../assets/images/logostacko.png';
 import RubikParticles from './originkit/ui/cube';
 
 const modalContents: Record<string, { title: string; content: React.ReactNode }> = {
+  'whatsapp': {
+    title: 'Fale com a Stack.O',
+    content: (
+      <div className="space-y-4">
+        <p className="text-gray-400 mb-4 text-sm">Escolha o setor ideal para o seu projeto e fale diretamente com nossos especialistas no WhatsApp:</p>
+        
+        <a href="https://wa.me/5554996684874" target="_blank" rel="noopener noreferrer" className="block w-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-green-500/50 p-4 rounded-xl transition-all group">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center shrink-0">
+              <MessageCircle className="text-green-500 w-6 h-6 group-hover:scale-110 transition-transform" />
+            </div>
+            <div>
+              <h5 className="text-white font-bold text-sm">Refatoração e Backend</h5>
+              <p className="text-gray-400 text-xs">Falar com Jhonatan Leovaldo</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://wa.me/5554991064604" target="_blank" rel="noopener noreferrer" className="block w-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-green-500/50 p-4 rounded-xl transition-all group">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center shrink-0">
+              <MessageCircle className="text-green-500 w-6 h-6 group-hover:scale-110 transition-transform" />
+            </div>
+            <div>
+              <h5 className="text-white font-bold text-sm">Sistemas Frontend, Apps e Fullstack</h5>
+              <p className="text-gray-400 text-xs">Falar com Braian Kleber</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    )
+  },
   'sobre': {
     title: 'Sobre Nós',
     content: (
@@ -153,10 +185,10 @@ export function Footer() {
               <a href="https://www.instagram.com/stack.odev?igsh=cWR5MDNsM3B3MzZv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-neon-purple hover:border-neon-purple hover:bg-neon-purple/10 transition-all">
                 <Instagram size={18} />
               </a>
-              <a href="https://wa.me/5554991064604" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-green-500 hover:border-green-500 hover:bg-green-500/10 transition-all">
+              <button onClick={() => setActiveModal('whatsapp')} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-green-500 hover:border-green-500 hover:bg-green-500/10 transition-all">
                 <MessageCircle size={18} />
-              </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#1877F2] hover:border-[#1877F2] hover:bg-[#1877F2]/10 transition-all">
+              </button>
+              <a href="https://www.facebook.com/share/14ifQF4e9Pc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#1877F2] hover:border-[#1877F2] hover:bg-[#1877F2]/10 transition-all">
                 <Facebook size={18} />
               </a>
             </div>
@@ -224,15 +256,13 @@ export function Footer() {
       </div>
       
       {/* WhatsApp Floating Button */}
-      <a 
-        href="https://wa.me/5554991064604" 
-        target="_blank" 
-        rel="noopener noreferrer"
+      <button 
+        onClick={() => setActiveModal('whatsapp')}
         className="fixed bottom-6 left-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all z-50 group"
       >
         <div className="absolute inset-0 rounded-full border-2 border-white/10 scale-100 group-hover:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
         <MessageCircle className="w-7 h-7 text-white" />
-      </a>
+      </button>
 
       <InfoModal 
         isOpen={activeModal !== null}

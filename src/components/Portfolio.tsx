@@ -159,30 +159,7 @@ const getProjects = (t: any) => [
       ]
     }
   },
-  {
-    title: "Vortex Logistics",
-    description: t("Orquestração de frotas em tempo real com rastreamento GPS e rotas otimizadas por IA.", "Real-time fleet orchestration with GPS tracking and AI-optimized routes."),
-    tags: ["Logistics", "React Native", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c50a63?auto=format&fit=crop&q=80&w=2000",
-    linkText: t("Ver Estudo de Caso", "View Case Study"),
-    metrics: [
-      { label: "Entregas (M)", value: 1.2 },
-      { label: "Economia (M)", value: 4.5 },
-      { label: "Precisão (%)", value: 98 },
-      { label: "Veículos", value: 5000 }
-    ],
-    architecture: {
-      nodes: [
-        { id: "mobile", label: "Driver App", type: "app" },
-        { id: "ws", label: "Socket Server", type: "app" },
-        { id: "ai", label: "Route AI", type: "app" }
-      ],
-      links: [
-        { source: "mobile", target: "ws" },
-        { source: "ws", target: "ai" }
-      ]
-    }
-  },
+  
   {
     title: "Stellar PropTech",
     description: t("Marketplace imobiliário com tours virtuais em 3D e contratos inteligentes.", "Real estate marketplace with 3D virtual tours and smart contracts."),
@@ -399,54 +376,8 @@ const getProjects = (t: any) => [
       ]
     }
   },
-  {
-    title: "Nimbus CloudSync",
-    description: t("SaaS de armazenamento em nuvem com sincronização delta e criptografia ponta-a-ponta.", "Cloud storage SaaS with delta sync and end-to-end encryption."),
-    tags: ["SaaS", "React", "Go", "S3"],
-    image: "https://images.unsplash.com/photo-1614064641913-6b7140414e71?auto=format&fit=crop&q=80&w=2000",
-    linkText: t("Ver Estudo de Caso", "View Case Study"),
-    metrics: [
-      { label: "Arquivos (B)", value: 1.5 },
-      { label: "Sync (ms)", value: 150 },
-      { label: "Segurança", value: 100 },
-      { label: "Uptime", value: 99.99 }
-    ],
-    architecture: {
-      nodes: [
-        { id: "client", label: "Desktop/Web", type: "app" },
-        { id: "sync", label: "Sync Engine", type: "app" },
-        { id: "storage", label: "Object Storage", type: "db" }
-      ],
-      links: [
-        { source: "client", target: "sync" },
-        { source: "sync", target: "storage" }
-      ]
-    }
-  },
-  {
-    title: "Solaris Grid",
-    description: t("Plataforma de distribuição inteligente de energia solar para microrredes urbanas.", "Smart solar energy distribution platform for urban microgrids."),
-    tags: ["Energy", "Vue", "Python", "InfluxDB"],
-    image: "https://images.unsplash.com/photo-1509391366360-584a5538eec4?auto=format&fit=crop&q=80&w=2000",
-    linkText: t("Ver Arquitetura", "View Architecture"),
-    metrics: [
-      { label: "Microrredes", value: 450 },
-      { label: "Capacidade (MW)", value: 120 },
-      { label: "Eficiência (%)", value: 95 },
-      { label: "Analytics", value: 100 }
-    ],
-    architecture: {
-      nodes: [
-        { id: "grid", label: "Grid Control", type: "app" },
-        { id: "api", label: "Telemetry API", type: "app" },
-        { id: "db", label: "Time-Series", type: "db" }
-      ],
-      links: [
-        { source: "grid", target: "api" },
-        { source: "api", target: "db" }
-      ]
-    }
-  },
+  
+  
   {
     title: "Zenith Generative AI",
     description: t("Estúdio de criação de conteúdo movido a IA com geração de texto, imagem e áudio integrados.", "AI-powered content creation studio with integrated text, image, and audio generation."),
